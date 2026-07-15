@@ -8,6 +8,34 @@
 - **Dokumentiert:** Eingebaute Hilfe-Funktion (`-h`).
 - **Headless-Ready:** Ideal für Ubuntu Server-Umgebungen und Proxmox-Cluster.
 
+## Installation & Setup
+1. Stelle sicher, dass `msmtp` installiert ist.
+2. Konfiguriere deine `~/.msmtprc` (siehe unten).
+3. Setze Ausführungsrechte: `chmod +x nexus-courier.sh`
+
+## Konfiguration (.msmtprc)
+Erstelle die Datei `~/.msmtprc` und passe sie an deinen SMTP-Anbieter an:
+
+    defaults
+    auth            on
+    tls             on
+    tls_starttls    on
+    logfile         ~/.msmtp.log
+
+    account         dein_account_name
+    host            smtp.dein-anbieter.de
+    port            587
+    from            deine-mail@beispiel.de
+    user            dein-username
+    password        dein-passwort
+
+    account default : dein_account_name
+
+*Wichtig: Schütze die Datei mit `chmod 600 ~/.msmtprc`.*
+
+## Benutzung
+`./nexus-courier.sh [EMPFÄNGER]`
+
 ---
 
 # nexus-courier (English)
@@ -28,5 +56,8 @@
 ## Usage
 `./nexus-courier.sh [RECIPIENT]`
 
+---
 
-###  Powerd by AI
+### Powered by AI
+
+#EOF
