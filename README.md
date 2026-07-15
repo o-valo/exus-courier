@@ -1,4 +1,11 @@
+![Bash](https://img.shields.io/badge/language-bash-blue)
+![Automation](https://img.shields.io/badge/topic-automation-green)
+![Monitoring](https://img.shields.io/badge/topic-monitoring-orange)
+
+
 # Nexus-Courier [DE]
+
+
 
 `nexus-courier` ist ein robustes Bash-Skript, das entwickelt wurde, um Statusberichte oder Log-Dateien von Linux-Servern automatisiert per E-Mail zu versenden. Es ist darauf ausgelegt, in komplexen Netzwerkinfrastrukturen als zuverlässiger Bote (Courier) zu fungieren.
 
