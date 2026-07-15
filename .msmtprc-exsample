@@ -2,7 +2,6 @@
 defaults
 auth           on
 tls            on
-# STARTTLS deaktiviert, um den TLS-Tunnel auf Port 465 zu erzwingen
 tls_starttls   off
 tls_certcheck  on
 logfile        ~/.msmtp.log
@@ -13,7 +12,10 @@ host           smtp.strato.de
 port           465
 from           DEINE_EMAIL_ADRESSE
 user           DEIN_BENUTZERNAME
-password       DEIN_PASSWORT
+# Hier liest msmtp das Passwort direkt aus der isolierten Datei
+passwordeval   cat ~/.msmtp_pw
 
 # Setze Strato als Standard
 account default : strato
+#EOF
+
