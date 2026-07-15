@@ -3,7 +3,15 @@
 
 # Lokale Konfigurationen (WICHTIG!)
 .msmtprc
-msmtp.log
+
+# Passwort-Dateien ausschließen
+.msmtp_pw
+
+# Log-Dateien ausschließen
+.msmtp.log
+
+
+
 
 # Backup-Dateien und Editor-Reste
 *~
