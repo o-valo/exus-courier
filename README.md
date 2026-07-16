@@ -11,7 +11,7 @@
 - **Flexibel:** Empfänger kann direkt beim Aufruf als Parameter übergeben werden.
 - **Robust:** Prüft Abhängigkeiten (`msmtp`, `cat`) und die Existenz der Konfigurationsdatei vor dem Versand.
 - **Dokumentiert:** Eingebaute Hilfe-Funktion (`-h`).
-- **Headless-Ready:** Ideal für Ubuntu Server-Umgebungen und Proxmox-Cluster.
+- **Headless-Ready:** Ideal für Debian/ Ubuntu Umgebungen.
 
 ### Installation & Setup
 1. Stelle sicher, dass `msmtp` installiert ist.
