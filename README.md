@@ -23,18 +23,28 @@
 Erstelle die Datei `~/.msmtprc` und passe sie an deinen SMTP-Anbieter an:
 
 ```bash
+# msmtp Konfiguration - STARK VERSCHLÜSSELT (TLS-Tunnel)
 defaults
-auth            on
-tls             on
-tls_starttls    on
-logfile         ~/.msmtp.log
+auth           on
+tls            on
+tls_starttls   off
+tls_certcheck  on
+logfile        ~/.msmtp.log
 
-account         dein_account_name
-host            smtp.dein-anbieter.de
-port            587
-from            deine-mail@beispiel.de
-user            dein-username
-passwordeval    gpg -d ~/.msmtp-password.gpg
+# Strato Account
+account        strato
+host           smtp.strato.de
+port           465
+from           DEINE_EMAIL_ADRESSE
+user           DEIN_BENUTZERNAME
+# Hier liest msmtp das Passwort direkt aus der isolierten Datei
+passwordeval   cat ~/.msmtp_pw
+
+# Setze Strato als Standard
+account default : strato
+
+
+
 
 ```
 
@@ -65,18 +75,26 @@ passwordeval    gpg -d ~/.msmtp-password.gpg
 ### Configuration (.msmtprc & Security)
 Create the `~/.msmtprc` file and adjust it to your SMTP provider:
 ```bash
+# msmtp Konfiguration - STARK VERSCHLÜSSELT (TLS-Tunnel)
 defaults
-auth            on
-tls             on
-tls_starttls    on
-logfile         ~/.msmtp.log
+auth           on
+tls            on
+tls_starttls   off
+tls_certcheck  on
+logfile        ~/.msmtp.log
 
-account         your_account_name
-host            smtp.your-provider.de
-port            587
-from            your-mail@example.com
-user            your-username
-passwordeval    gpg -d ~/.msmtp-password.gpg
+# Strato Account
+account        strato
+host           smtp.strato.de
+port           465
+from           DEINE_EMAIL_ADRESSE
+user           DEIN_BENUTZERNAME
+# Hier liest msmtp das Passwort direkt aus der isolierten Datei
+passwordeval   cat ~/.msmtp_pw
+
+# Setze Strato als Standard
+account default : strato
+#EOF
 
 ```
 
